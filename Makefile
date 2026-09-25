@@ -2,8 +2,8 @@
 CC=gcc
 # CFLAGS will be the options passed to the compiler.
 CFLAGS=-c -Wall
-TASK_1_OBJECTS=task1.o
-TASK_2_OBJECTS=task2.o
+TASK_1_OBJECTS=task1.c
+TASK_2_OBJECTS=task2.c
 all: task1 task2
 
 task1: $(TASK_1_OBJECTS)
