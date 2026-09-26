@@ -39,11 +39,11 @@ int main() {
 		return 0;
 	}
 	if(newScale == 'C') {
-		printf("Converted temperature: %f\n", tempInC);
+		printf("Converted temperature: %f C\n", tempInC);
 	}else if(newScale == 'K') {
-		printf("Converted temperature: %f\n", celsiusToKelvin(tempInC));
+		printf("Converted temperature: %f K\n", celsiusToKelvin(tempInC));
 	} else {
-		printf("Converted temperature: %f\n", celsiusToFahrenheit(tempInC));
+		printf("Converted temperature: %f F\n", celsiusToFahrenheit(tempInC));
 	}
 	if(tempInC < 10) {
 		printf("Temperature category: Cold\nWeather advisory: Wear a jacket\n");
