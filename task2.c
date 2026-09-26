@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 float fahrenheitToCelsius(float fTemp) {
-	return (fTemp - 32) / (9/5);
+	return (fTemp - 32) / 1.8;
 }
 
 float kelvinToCelsius(float kTemp) {
@@ -9,7 +9,7 @@ float kelvinToCelsius(float kTemp) {
 }
 
 float celsiusToFahrenheit(float cTemp) {
-	return (cTemp * (9/5)) + 32;
+	return (cTemp * 1.8) + 32;
 }
 
 float celsiusToKelvin(float cTemp) {
@@ -22,21 +22,21 @@ int main() {
 	char newScale;
 	printf("Enter the temperature value: ");
 	scanf(" %f", &temp);
-	printf("\nEnter the original scale (C, F, or K): ");
+	printf("Enter the original scale (C, F, or K): ");
 	scanf(" %c", &origScale);
-	printf("\nEnter the scale to convert to (C, F, or K): ");
+	printf("Enter the scale to convert to (C, F, or K): ");
 	scanf(" %c", &newScale);
 	float tempInC;
-	if(tempInC < -273.15) {
-		printf("ERROR: TEMPERATURE IS LESS THAN ABSOLUTE ZERO");
-		return 0;
-	}
 	if(origScale == 'F') {
 		tempInC = fahrenheitToCelsius(temp);
 	} else if(origScale == 'K') {
 		tempInC = kelvinToCelsius(temp);
 	} else {
 		tempInC = temp;
+	}
+	if(tempInC < -273.15) {
+		printf("ERROR: TEMPERATURE IS LESS THAN ABSOLUTE ZERO");
+		return 0;
 	}
 	if(newScale == 'C') {
 		printf("Converted temperature: %f\n", tempInC);
@@ -46,13 +46,13 @@ int main() {
 		printf("Converted temperature: %f\n", celsiusToFahrenheit(tempInC));
 	}
 	if(tempInC < 10) {
-		printf("Temperature category: Cold\nWeather advisory: Wear a jacket");
+		printf("Temperature category: Cold\nWeather advisory: Wear a jacket\n");
 	}else if(tempInC < 25) {
-		printf("Temperature category: Comfortable\nWeather advisory: Go on a walk");
+		printf("Temperature category: Comfortable\nWeather advisory: Go on a walk\n");
 	} else if(tempInC < 35) {
-		printf("Temperature category: Hot\nWeather advisory: Drink lots of water");
+		printf("Temperature category: Hot\nWeather advisory: Drink lots of water\n");
 	} else {
-		printf("Temperature category: Extreme Heat\nWeather advisory: Stay indoors");
+		printf("Temperature category: Extreme Heat\nWeather advisory: Stay indoors\n");
 	}
 	return 0;
 }
